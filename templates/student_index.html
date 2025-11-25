@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple House Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="number"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e8f5e8;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .loading {
+            text-align: center;
+            color: #666;
+        }
+        .explanation {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">Home</a> | 
+            <a href="/about">How It Works</a>
+        </div>
+        
+        <h1>🏠 Simple House Price Predictor</h1>
+        
+        <div class="explanation">
+            <h3>How to use:</h3>
+            <p>Fill in the details about a house below, and our simple AI will predict its price!</p>
+            <p><strong>Note:</strong> This is a simplified version for learning purposes.</p>
+        </div>
+        
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="bedrooms">Number of Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" min="1" max="10" value="3" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="bathrooms">Number of Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" min="1" max="10" step="0.5" value="2" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="sqft_living">Living Area (square feet):</label>
+                <input type="number" id="sqft_living" name="sqft_living" min="500" max="10000" value="2000" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="sqft_lot">Lot Size (square feet):</label>
+                <input type="number" id="sqft_lot" name="sqft_lot" min="1000" max="100000" value="5000" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="grade">House Grade (1-13, higher is better):</label>
+                <input type="number" id="grade" name="grade" min="1" max="13" value="7" required>
+            </div>
+            
+            <button type="submit">Predict House Price</button>
+        </form>
+        
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<div class="loading">🤔 Thinking... Please wait...</div>';
+            resultDiv.style.display = 'block';
+            
+            // Get form data
+            const formData = {
+                bedrooms: document.getElementById('bedrooms').value,
+                bathrooms: document.getElementById('bathrooms').value,
+                sqft_living: document.getElementById('sqft_living').value,
+                sqft_lot: document.getElementById('sqft_lot').value,
+                grade: document.getElementById('grade').value
+            };
+            
+            // Send to server
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    resultDiv.innerHTML = `<div class="error">❌ Error: ${data.error}</div>`;
+                } else {
+                    resultDiv.innerHTML = `
+                        <h3>🎉 Predicted Price:</h3>
+                        <h2 style="color: #27ae60; font-size: 2em;">${data.formatted_price}</h2>
+                        <p>This is just an estimate based on similar houses!</p>
+                    `;
+                }
+            })
+            .catch(error => {
+                resultDiv.innerHTML = `<div class="error">❌ Error: ${error.message}</div>`;
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

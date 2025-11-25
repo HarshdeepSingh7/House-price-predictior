@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}About - House Price Prediction{% endblock %}
+
+{% block content %}
+<!-- About Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="hero-title">About Our Project</h1>
+        <p class="hero-subtitle">A Machine Learning Project for House Price Prediction</p>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0"><i class="fas fa-info-circle me-2"></i>Project Overview</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">This is a comprehensive house price prediction project built using Python, Machine Learning, and Web Development technologies.</p>
+                        
+                        <h5 class="mt-4">🎯 Project Goals</h5>
+                        <ul>
+                            <li>Predict house prices using machine learning algorithms</li>
+                            <li>Provide an intuitive web interface for predictions</li>
+                            <li>Analyze house price data with visualizations</li>
+                            <li>Demonstrate practical application of ML in real estate</li>
+                        </ul>
+                        
+                        <h5 class="mt-4">🔧 Technologies Used</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Backend & ML:</h6>
+                                <ul>
+                                    <li>Python 3.x</li>
+                                    <li>Pandas - Data manipulation</li>
+                                    <li>NumPy - Numerical computing</li>
+                                    <li>Scikit-learn - Machine learning</li>
+                                    <li>Matplotlib & Seaborn - Data visualization</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Web Development:</h6>
+                                <ul>
+                                    <li>Flask - Web framework</li>
+                                    <li>HTML5 & CSS3</li>
+                                    <li>Bootstrap 5 - UI framework</li>
+                                    <li>JavaScript - Frontend interactions</li>
+                                    <li>Font Awesome - Icons</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fas fa-chart-line me-2"></i>Machine Learning Process</h5>
+                    </div>
+                    <div class="card-body">
+                        <ol>
+                            <li><strong>Data Loading:</strong> Import house data from CSV</li>
+                            <li><strong>Exploratory Analysis:</strong> Understand data patterns</li>
+                            <li><strong>Data Preprocessing:</strong> Clean and prepare data</li>
+                            <li><strong>Feature Engineering:</strong> Select relevant features</li>
+                            <li><strong>Model Training:</strong> Train Linear Regression model</li>
+                            <li><strong>Model Evaluation:</strong> Calculate R² score and metrics</li>
+                            <li><strong>Model Deployment:</strong> Create web interface</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="fas fa-database me-2"></i>Dataset Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Source:</strong> House sales data from King County, Washington</p>
+                        <p><strong>Size:</strong> 21,613 house records</p>
+                        <p><strong>Features:</strong> 15+ attributes including:</p>
+                        <ul class="small">
+                            <li>Bedrooms, Bathrooms</li>
+                            <li>Square footage (living, lot, above, basement)</li>
+                            <li>Floors, Waterfront, View</li>
+                            <li>Condition, Grade</li>
+                            <li>Year built, Year renovated</li>
+                            <li>Location data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>Learning Outcomes</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-brain feature-icon"></i>
+                                <h6>Machine Learning</h6>
+                                <p class="small">Understanding of linear regression, feature selection, and model evaluation</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-code feature-icon"></i>
+                                <h6>Python Programming</h6>
+                                <p class="small">Data manipulation with Pandas, numerical computing with NumPy</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-globe feature-icon"></i>
+                                <h6>Web Development</h6>
+                                <p class="small">Building web applications with Flask and creating user interfaces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0"><i class="fas fa-rocket me-2"></i>Future Enhancements</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Model Improvements:</h6>
+                                <ul>
+                                    <li>Try other ML algorithms (Random Forest, XGBoost)</li>
+                                    <li>Feature engineering and selection</li>
+                                    <li>Hyperparameter tuning</li>
+                                    <li>Cross-validation techniques</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Web Features:</h6>
+                                <ul>
+                                    <li>User authentication system</li>
+                                    <li>Save prediction history</li>
+                                    <li>Advanced visualizations</li>
+                                    <li>API endpoints for mobile apps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="mb-4">Get Started</h2>
+                <p class="lead">Ready to predict house prices? Try our prediction tool!</p>
+                <a href="/" class="btn btn-primary btn-lg">
+                    <i class="fas fa-calculator me-2"></i>Start Predicting
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,515 @@
+{% extends "base.html" %}
+
+{% block title %}Home - House Price Prediction{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="hero-title fade-in">🏠 Smart House Price Prediction</h1>
+                <p class="hero-subtitle fade-in">Harness the power of Machine Learning and Linear Regression to predict house prices with 85%+ accuracy</p>
+                <div class="hero-buttons fade-in">
+                    <a href="#prediction-form" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-calculator me-2"></i>Start Predicting
+                    </a>
+                    <a href="#features" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <i class="fas fa-home"></i>
+                        <h4>AI-Powered</h4>
+                        <p>Machine Learning</p>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>85%+ Accuracy</h4>
+                        <p>Linear Regression</p>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Real-time</h4>
+                        <p>Instant Results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="stats-section">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <span class="stat-number">21,613</span>
+                        <span class="stat-label">Houses Analyzed</span>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <span class="stat-number">85%+</span>
+                        <span class="stat-label">Model Accuracy</span>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Key Features</span>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <span class="stat-number">Real-time</span>
+                        <span class="stat-label">Predictions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title">🚀 Powerful Features</h2>
+                <p class="lead">Our advanced machine learning system delivers accurate house price predictions</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card slide-in-left">
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h4>AI-Powered Analysis</h4>
+                    <p>Advanced Linear Regression algorithm trained on 21,000+ house records for precise predictions</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card fade-in">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h4>Comprehensive EDA</h4>
+                    <p>Detailed exploratory data analysis with interactive visualizations and statistical insights</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card slide-in-right">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h4>Responsive Design</h4>
+                    <p>Modern, mobile-first interface that works seamlessly across all devices and screen sizes</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card slide-in-left">
+                    <i class="fas fa-bolt feature-icon"></i>
+                    <h4>Real-time Results</h4>
+                    <p>Get instant price predictions with our optimized machine learning model and fast processing</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card fade-in">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h4>Data Security</h4>
+                    <p>Your data is processed securely with industry-standard encryption and privacy protection</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card slide-in-right">
+                    <i class="fas fa-cogs feature-icon"></i>
+                    <h4>Easy Integration</h4>
+                    <p>Simple API endpoints and clean code structure for easy integration with other systems</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Prediction Form Section -->
+<section id="prediction-form" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="prediction-form">
+                    <div class="text-center mb-5">
+                        <h2 class="section-title">🏠 House Price Predictor</h2>
+                        <p class="lead">Enter the house details below to get an accurate price prediction</p>
+                    </div>
+                    
+                    <form id="predictionForm">
+                        <!-- Basic Information -->
+                        <div class="form-section">
+                            <h5><i class="fas fa-home me-2"></i>Basic Information</h5>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="bedrooms" class="form-label">Number of Bedrooms</label>
+                                    <input type="number" class="form-control" id="bedrooms" name="bedrooms" min="0" max="10" value="3" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="bathrooms" class="form-label">Number of Bathrooms</label>
+                                    <input type="number" class="form-control" id="bathrooms" name="bathrooms" min="0" max="10" step="0.25" value="2" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="floors" class="form-label">Number of Floors</label>
+                                    <input type="number" class="form-control" id="floors" name="floors" min="0" max="5" step="0.5" value="1" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Square Footage -->
+                        <div class="form-section">
+                            <h5><i class="fas fa-ruler-combined me-2"></i>Square Footage</h5>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="sqft_living" class="form-label">Square Feet Living</label>
+                                    <input type="number" class="form-control" id="sqft_living" name="sqft_living" min="0" value="2000" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="sqft_lot" class="form-label">Square Feet Lot</label>
+                                    <input type="number" class="form-control" id="sqft_lot" name="sqft_lot" min="0" value="8000" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="sqft_above" class="form-label">Square Feet Above</label>
+                                    <input type="number" class="form-control" id="sqft_above" name="sqft_above" min="0" value="2000" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="sqft_basement" class="form-label">Square Feet Basement</label>
+                                    <input type="number" class="form-control" id="sqft_basement" name="sqft_basement" min="0" value="0" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quality & Features -->
+                        <div class="form-section">
+                            <h5><i class="fas fa-star me-2"></i>Quality & Features</h5>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="waterfront" class="form-label">Waterfront Property</label>
+                                    <select class="form-control" id="waterfront" name="waterfront" required>
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="view" class="form-label">View Rating (0-4)</label>
+                                    <input type="number" class="form-control" id="view" name="view" min="0" max="4" value="0" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="condition" class="form-label">Condition (1-5)</label>
+                                    <input type="number" class="form-control" id="condition" name="condition" min="1" max="5" value="3" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="grade" class="form-label">Grade (1-13)</label>
+                                    <input type="number" class="form-control" id="grade" name="grade" min="1" max="13" value="7" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="yr_built" class="form-label">Year Built</label>
+                                    <input type="number" class="form-control" id="yr_built" name="yr_built" min="1800" max="2024" value="2000" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="form-section">
+                            <h5><i class="fas fa-info-circle me-2"></i>Additional Information</h5>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="yr_renovated" class="form-label">Year Renovated (0 if never)</label>
+                                    <input type="number" class="form-control" id="yr_renovated" name="yr_renovated" min="0" max="2024" value="0" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="sqft_living15" class="form-label">Square Feet Living 15 Neighbors</label>
+                                    <input type="number" class="form-control" id="sqft_living15" name="sqft_living15" min="0" value="2000" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="sqft_lot15" class="form-label">Square Feet Lot 15 Neighbors</label>
+                                    <input type="number" class="form-control" id="sqft_lot15" name="sqft_lot15" min="0" value="8000" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="text-center mt-5">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-magic me-2"></i>Predict House Price
+                            </button>
+                        </div>
+                    </form>
+                        
+                        <!-- Loading Spinner -->
+                        <div class="loading" id="loading">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Calculating prediction...</p>
+                        </div>
+                        
+                        <!-- Prediction Result -->
+                        <div id="predictionResult" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it Works Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="process-section">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">⚡ How It Works</h2>
+                    <p class="lead text-white">Simple 4-step process to get accurate house price predictions</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h5 class="text-white">Enter Details</h5>
+                        <p class="text-white-50">Fill in house features like bedrooms, bathrooms, square footage, and quality ratings</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h5 class="text-white">AI Processing</h5>
+                        <p class="text-white-50">Our machine learning model processes your input using advanced linear regression algorithms</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h5 class="text-white">Get Prediction</h5>
+                        <p class="text-white-50">Receive an accurate price prediction with confidence metrics and detailed analysis</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h5 class="text-white">Analyze Results</h5>
+                        <p class="text-white-50">View comprehensive analysis and understand the key factors affecting house price</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Enhanced form submission with animations
+document.getElementById('predictionForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Show loading with animation
+    const loadingDiv = document.getElementById('loading');
+    const resultDiv = document.getElementById('predictionResult');
+    
+    loadingDiv.style.display = 'block';
+    resultDiv.style.display = 'none';
+    
+    // Add loading animation
+    loadingDiv.innerHTML = `
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <h5 class="mt-3 text-primary">🤖 AI is analyzing your house data...</h5>
+            <p class="text-muted">Processing features and calculating prediction</p>
+        </div>
+    `;
+    
+    try {
+        const response = await fetch('/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (result.error) {
+            throw new Error(result.error);
+        }
+        
+        // Hide loading with fade out
+        loadingDiv.style.opacity = '0';
+        setTimeout(() => {
+            loadingDiv.style.display = 'none';
+            loadingDiv.style.opacity = '1';
+        }, 300);
+        
+        // Show result with animation
+        setTimeout(() => {
+            resultDiv.innerHTML = `
+                <div class="prediction-result">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h4><i class="fas fa-home me-2"></i>Predicted House Price</h4>
+                            <h2 class="mb-2">${result.formatted_price}</h2>
+                            <p class="mb-0">Based on your input features and ML analysis</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="accuracy-badge">
+                                <i class="fas fa-chart-line"></i>
+                                <span>85%+ Accuracy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            resultDiv.style.display = 'block';
+            resultDiv.classList.add('fade-in');
+            
+            // Scroll to result smoothly
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+        
+    } catch (error) {
+        // Hide loading
+        loadingDiv.style.display = 'none';
+        
+        // Show error with animation
+        resultDiv.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+                <h4><i class="fas fa-exclamation-triangle me-2"></i>Prediction Error</h4>
+                <p>Sorry, there was an error processing your request: ${error.message}</p>
+                <button class="btn btn-outline-danger" onclick="location.reload()">Try Again</button>
+            </div>
+        `;
+        resultDiv.style.display = 'block';
+        resultDiv.classList.add('fade-in');
+    }
+});
+
+// Add scroll animations
+window.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.feature-card, .process-step, .stat-item');
+    
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('fade-in');
+        }
+    });
+});
+
+// Add form validation feedback
+document.querySelectorAll('.form-control').forEach(input => {
+    input.addEventListener('blur', function() {
+        if (this.checkValidity()) {
+            this.classList.add('is-valid');
+            this.classList.remove('is-invalid');
+        } else {
+            this.classList.add('is-invalid');
+            this.classList.remove('is-valid');
+        }
+    });
+    
+    input.addEventListener('input', function() {
+        if (this.classList.contains('is-invalid') && this.checkValidity()) {
+            this.classList.remove('is-invalid');
+            this.classList.add('is-valid');
+        }
+    });
+});
+
+// Add smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add typing animation to hero title
+window.addEventListener('load', function() {
+    const title = document.querySelector('.hero-title');
+    if (title) {
+        title.style.opacity = '0';
+        title.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            title.style.transition = 'all 0.8s ease-out';
+            title.style.opacity = '1';
+            title.style.transform = 'translateY(0)';
+        }, 500);
+    }
+});
+</script>
+
+<style>
+.accuracy-badge {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+}
+
+.accuracy-badge i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.is-valid {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.alert {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    color: white;
+}
+
+.alert-danger h4 {
+    color: white;
+    font-weight: 600;
+}
+
+.btn-outline-danger {
+    border-color: white;
+    color: white;
+}
+
+.btn-outline-danger:hover {
+    background: white;
+    color: #dc3545;
+}
+</style>
+{% endblock %}
